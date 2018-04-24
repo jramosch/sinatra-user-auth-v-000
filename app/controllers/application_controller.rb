@@ -1,3 +1,5 @@
+require 'sinatra/activerecord'
+
 class ApplicationController < Sinatra::Base
   register Sinatra::ActiveRecordExtension
   set :views, Proc.new { File.join(root, "../views/") }
@@ -29,7 +31,7 @@ class ApplicationController < Sinatra::Base
     redirect '/users/home'
   end
 
-  get '/sessions/logout' do 
+  get '/sessions/logout' do
 
     redirect '/'
   end
